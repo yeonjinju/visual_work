@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            cursor: pointer;
+            transition: margin-left 0.4s linear;
+        }
+    </style>
+</head>
+<body>
+    <h1>바꿔보기</h1>
+    <button onclick="change()">바꾸까</button>
+    <p id="one" onmouseover="changes()">p1</p>
+    <p onmouseleave="changges2()">p2</p>
+    <p class="my-class">p3</p>
+    <p class="my-class">p4</p>
+    <input type="text" id="two">
+    <button onclick="send()">전송&rarr;</button>
+    <input type="text" id="three">
+    <div class="box" onclick="move()"> 클릭 </div>
+    <script>
+        let change = function(){
+            document.querySelector("h1").innerText="하이요";
+        };
+        let changes = function(){
+            document.querySelector("p").innerText="마우스 올림";
+        };
+        let changges2 = function(){
+            document.querySelector("p").innerText="바껴라"
+        }
+        let send=function(){
+            let msg=document.querySelector("#two").value;
+            document.querySelector("#three").value=msg;
+        };
+
+        let mLeft=0
+        let move=()=>{
+            mLeft=move+100;
+            document.querySelector(".box").style.margineLeft=mLeft+px;
+            
+        }
+    </script>
+<!-- 
+// document.querySelector("p").innerText="하이"  //바로변경
+// alert(document.querySelector("button").innerText="하이") // 눌렀을때 변경 -->
+
+</body>
+</html>

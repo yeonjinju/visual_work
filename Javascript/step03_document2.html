@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_document2.html</title>
+    <style>
+        p{
+            color: blue;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+            transition: margin-left 0.4s linear;
+            /* margin-left:100px ; */
+        }
+    </style>
+</head>
+<body>
+    <h1>인라인 css 테스트</h1> 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci earum sapiente pariatur cumque quam illo perspiciatis tempora nobis vitae veniam autem quas debitis, fuga ratione ullam perferendis reiciendis nulla repellendus.</p>
+    <div class="box" onclick="move()">눌러보셈</div>
+
+<!-- 
+    <button onclick="reset()">Reset</button>
+    <div class="box" onclick="move()">눌러보셈</div> -->
+    
+    <script>
+        // 위의 box div를 클릭하면 우측으로 100px이동하도록 프로그래밍 하세요. xxx.style.marginleft="100px"
+        // 페이지 로딩시점 document.querySelector(".box").style.marginleft="100px";
+
+        // 실행할 code를 함수안에 준비해둔다.
+        let move=()=>{
+            document.querySelector(".box").style.marginLeft="100px";
+            e.target.style.backgroundColor="yello"
+        };
+        item.addEventListener("click", (e)=>{
+  e.target.style.backgroundColor="yellow"
+  });
+    </script>
+</body>
+</html>

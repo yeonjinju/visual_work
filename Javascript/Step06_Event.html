@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_Event.html</title>
+</head>
+<body>
+    <h1>Event Listener 함수등록 pattern 익히기</h1>
+    <button onclick="send()">전송</button>
+    <button id="sendBtn">전송2</button>
+    <script>
+        // 전송버튼을 눌렀을때 알림창에 "전송합니다" 를 출력하도록 해보기
+        let send=()=>{
+            alert("전송합니다");
+        };
+        
+        //.addEventListener(이벤트명(string type "click, mouseover, focus ...");콜백함수(function type))
+        document.querySelector("#sendBtn").addEventListener("click", ()=>{
+        // id가 sendBtn인 요소에 "click" 이벤트가 일어나면 호출될 callback 함수 등록한고야    
+        });
+
+    </script>
+    
+</body>
+</html>

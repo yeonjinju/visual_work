@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_Loop.html</title>
+</head>
+<body>
+    <!-- p{p$    
+         입니다.}*10 -->
+    <p>p1 입니다</p>
+    <p>p2 입니다</p>
+    <p>p3 입니다</p>
+    <p>p4 입니다</p>
+    <p>p5 입니다</p>
+    <p>p6 입니다</p>
+    <p>p7 입니다</p>
+    <p>p8 입니다</p>
+    <p>p9 입니다</p>
+    <p>p10 입니다</p>
+
+    <script>
+
+        //페이지 로딩시점에 위에 있는 모든 p요소의 innertext를 "김구라"로 변경
+        
+        //100번 반복이 되고 반복되는 동안에 i값이 0부터 1씩 증가하면서 99가 되는 반복문
+        for(let i=0; i<100; i++){
+            //console.log("반복되네?");
+            console.log(i);
+            document.querySelectorAll("p")[i].innerText="김구라";
+        }
+
+        //{document.querySelectorAll("p")[i]="김구라";}
+    </script>
+</body>
+</html>
