@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_JSON.html</title>
+</head>
+<body>
+    <h1>JSON 문자열 사용해보기</h1>
+    <p>
+        <strong>JAVA Script Object Nation</strong> (자바스크립트 객체 표기법) 을 따르는 문자열을 JSON문자열이라고 한다.
+    </p>
+    <!--  표기법
+    기존 표기법
+    <student> <name>주연진</name> <addr>관악구</addr>
+    or
+    <student name="주연진"addr"관악구"/>
+
+    JSON형식
+    {"name":"주연진", "addr":"관악구"} 
+    - key값은 반드시 double quotation으로 감싸야 한다.
+    - value로 작성할 수 있는 형식
+    1. 문자열 "xxx"
+    2. 숫자 10
+    3. 논리 true or false
+    4. 빈값 null
+    5. 또 다른 하나의 JSON {}
+    6. 또 다른 하나의 JSON []
+
+    
+    -->
+    <script>
+        // JSON형식의 문자열 `내용`
+        const data=`
+            {  
+                "num":1,
+                "name":"김구라",
+                "isMan":true,
+                "addr":null,
+              
+              
+                "friends": ["해골","원숭이","주뎅이"],
+                "company": {
+                    "name":"에이콘",
+                    "addr":"강남역"
+                }
+            }
+        `;
+
+        // JSON형식의 문자열을 이용해서 object만들기
+        const result=JSON.parse(data);
+
+        // object를 이용해서 JSON형식의 문자열 만들기
+        const result2=JSON.stringify(result);
+
+
+    </script>
+</body>
+</html>
