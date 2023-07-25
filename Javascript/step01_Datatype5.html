@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>step06_Datatype.html</title>
-    <style>
-        .box{
-            width: 100px;
-            height: 100px;
-            background-color: greenyellow;
-        }
-
-    </style>
-
-    
+    <title>Step05_DataType5.html</title>
 </head>
 <body>
     <h1>javascript 데이터 type</h1>
-    <p>코끼리를 냉장고에 넣고싶으면 마우스 우클릭, 검사, console에 들어가서 pushElephant()를 입력하고 엔터를 치시오</p>
-    <button oneclick="pushElephant()">코끼리를 냉장고에 넣기</button>
-    <div class="box" onmouseleave="pushElephant()"></div>
+    <p> <strong>array</strong> type</p>
     <script>
-        // //  코끼리를 냉장고에 넣기
-        // console.log("냉장고 문을 연다.");
-        // console.log("코끼리를 집어 넣는다.");
-        // console.log("냉장고 문을 닫는다.");
+        //배열에는 주로 한가지 type 의 데이터만 담는게 일반적이다.
+        let nums=[10, 20, 30, 40, 50];
+        let names=["김구라","해골","원숭이","주뎅이","덩어리"];
+        let data=[true, true, false, false, true];
 
-        let pushElephant = function(){
-        //  코끼리를 냉장고에 넣기
-        console.log("냉장고 문을 연다.");
-        console.log("코끼리를 집어 넣는다.");
-        console.log("냉장고 문을 닫는다.");
-        };
-        // console.log 참조하고싶을때, console.log()호출하고싶을때
+        //회원 목록을 담고 싶다면...
+        //회원 한명의 정보가 여러개의 데이터로 구성되어 있다 { }
+        let members=[
+            {num:1, name:"김구라", addr:"노량진"},
+            {num:2, name:"해골", addr:"행신동"},
+            {num:3, name:"원숭이", addr:"상도동"}
+        ];
 
+        //array type
+        let a=members;
+        //object type
+        let b=members[0];
+        //number type 1
+        let c=members[0].num;
+        //string type "김구라"
+        let d=members[0].name;
+        //string type "노량진"
+        let e=members[0].addr;  
+        
     </script>
 </body>
 </html>

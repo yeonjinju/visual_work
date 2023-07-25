@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>step03_document.html</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document.html</title>
 </head>
-
 <body>
-    <h1>document object 사용해보기</h1>
+    <h1>document object 사용해 보기</h1>
     <button onclick="change()">바꾸기</button>
-    <p id="one" onmouseover="changep()">p1</p>
-    <p onmouseleave="changep2()">p2</p>
-
+    <p id="one" onmouseover="change2()">p1</p>
+    <p class="my-class">p2</p>
     <p class="my-class">p3</p>
-    <p class="my-class">p4</p>
-    <input type="text" id="two" />
-
-    <!-- rarr => 오른쪽 화살표 문자어 -->
-    <button onclick="send()">전송 &rarr;</button>
-    <input type="text" id="three" />
+    <input type="text" id="two">
+    <button onclick="send()">전송 &rarr; </button>
+    <input type="text" id="three">
     <script>
-        // h1요소의 innertext를 특정버튼(바꾸기)을 눌렀을때 바꾸고싶다
-        let change = function () {
-            document.querySelector("h1").innerText = "하이";
-        };
-        //p1에 mouseover가 되었을때 innertext를 "마우스가 올라왔네?"라고 변경되도록 프로그래밍 해보세요.
-        let changep = () => {
-            document.querySelector("p").innerText = "마우스가 올라왔네";
+        //h1 요소의 innerText 를 특정(바꾸기) 버튼을 눌렀을때 바꾸고 싶다
+        let change=function(){
+            document.querySelector("h1").innerText="오잉?";
         };
 
-        let changep2 = function () {
-            document.querySelector("p").innerText = "바꼈당";
+        // p1 에 mouseover 가 되었을때 innerText 를 "마우스가 올라왔네?" 라고 변경되도록 프로그래밍해 보세요.
+    
+        let change2=()=>{
+            document.querySelector("p").innerText="마우스가 올라왔네?";
         };
-
-        let send = () => {
-            // 1. 첫번째 input요소에 입력한 value를 읽어온다.
+        /*
+        let send=()=>{
+            //1. 첫번재 input 요소에 입력한 value 를 읽어온다.
             let msg=document.querySelector("#two").value;
-            // 2. 위에서 읽어온value값을 두번째 input요소의 value값으로 넣어준다.
+            //2. 위에서 읽어온 value 값을 두번째 input 요소의 value 값으로 넣어준다.
             document.querySelector("#three").value = msg;
-            // msg의 변수는 누를때마다 생기는곤가
         };
+        */
 
-      // document.querySelector("p").innerText="하이"  //바로변경
-      // alert(document.querySelector("button").innerText="하이") // 눌렀을때 변경
+        //아래의 코드도 가능하다
+
+        let firstInput=document.querySelector("#two");
+        let secondInput=document.querySelector("#three");
+
+        let send=()=>{
+            secondInput.value = firstInput.value;
+        }
+
     </script>
 </body>
-
 </html>

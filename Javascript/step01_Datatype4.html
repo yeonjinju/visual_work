@@ -4,46 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>step05_Datatype.html</title>
+    <title>Step04_DataType4.html</title>
 </head>
 <body>
-    <h1>javascript 데이터</h1>
-    <p> <strong>array</strong>type</p>
+    <h1>javascript 데이터 type</h1>
+    <p> <strong>array</strong> type</p>
     <script>
-        // 배열에는 주로 한가지 type의 데이터만 담는게 일반적이다.
-        let nums=[10, 20, 30, 40, 50];
-        let names=["김구라", "해골", "원숭이", "연땡이", "다람쥐"];
-        let data=[true, true, false, false, true];
 
-        // 회원 목록을 담고 싶다면.. 
-        // 회원 한명의 정보가 여러개의 데이터로 구성되어 있다 {}
-        let members=[
-            {num:1, name:"김구라", addr:"노량진"},
-            {num:2, name:"해골", addr:"행신동"},
-            {num:3, name:"원숭이", addr:"상도동"}
-        ];
+        /*
+            내가 좋아하는 음식 순서
 
-        // array type
-        let a=members;
-        // object type
-        let b=members[0];
-        // number type 
-        let c=members[0].num;        
-        // string type "김구라"
-        let d=members[0].name;
-        // string type "노량진"
-        let e=members[0].addr;        
+            라면, 치킨, 피자
+        */
 
+        //array type 
+        let foods=["라면", "치킨", "피자"];
 
-        /* number type(let (num,result)=10;): 산술연산 가능, string type(let str="abcd",'',``;):문자데이터를 다룰때 사용, 
-        boolean type(let (isRun,result)c=true;):논리 데이터 참, 거짓을 나타낼때 사용 
-        object type(let d={};):여러개의 데이터를 key,value의 쌍으로 관리하고싶을때 array type(let e[];):여러개의 순서가 중요한 데이터를  index로 관리하고 싶을때
-        function type(let f=();):특정시점에 일괄 실행할 javascript를 모아놓고 싶을때 { 사이에 있는 test()가 call된 시점에 실행}
-        undefined type  */
+        //배열의 특정 인덱스에 저장된 item 을  변수에 담기
+        let a=foods[0];
+        let b=foods[1];
 
-        // 1. function a(){} 이름이 있는  함수 만들기
-        // 2. let a = function(){} 이름이 없는 함수를 만들어서 변수에 대입
-        // 3. let a = ()=>{} 화살표 함수를 만들어서 변수에 대입
+        //배열의 특정 인덱스에 저장된 item 을 수정하기
+        foods[0]="자장면";
+        foods[1]="짬뽕";
 
     </script>
 </body>

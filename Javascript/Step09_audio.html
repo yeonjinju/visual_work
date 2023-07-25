@@ -8,21 +8,20 @@
 </head>
 <body>
     <h1>오디오 재생</h1>
-    <audio src="sounds/piano.mp3" controls></audio>  <!-- controls 가 있어야 사이트 내 뜬다. -->
+    <audio id="music2" src="sounds/piano.mp3" controls></audio>
     <script>
-        // 오디오 객체를 생성해서 오디오 로딩하기
-        const music = new Audio("sounds/piano.mp3");
-        // 로딩이 완료 되었을때 호출되는 함수 등록
+        //오디오 객체를 생성해서 오디오 로딩하기 
+        const music=new Audio("sounds/piano.mp3");
+        //로딩이 완료 되었을때 호출되는 함수 등록
         music.onloadeddata=()=>{
             console.log("음악로딩 완료!");
         };
-        // 콘솔 창에서 music.play하면 재생 music.pause하면 일시정지, currentTime 재생위치, duration 총 재생크기(위치), 
-        
+
         const music2=document.querySelector("#music2");
         music2.onloadeddata=()=>{
-            console.log("음악로딩 완료2!");
+            console.log("음악로딩 완료! 2");
         };
-
+        
         const fire=new Audio("sounds/fire.wav");
         const birddie=new Audio("sounds/birddie.mp3");
 

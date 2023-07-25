@@ -11,24 +11,22 @@
     <div class="container">
         <h1>Popover 테스트</h1>
         <button type="button" class="btn btn-lg btn-danger" 
-        data-bs-toggle="popover" 
-        data-bs-title="Popover title" 
-        data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
         <button type="button" class="btn btn-lg btn-danger" 
-        data-bs-toggle="popover" 
-        data-bs-title="Popover title" 
-        data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
         <button type="button" class="btn btn-lg btn-danger" 
-        data-bs-toggle="popover" 
-        data-bs-title="Popover title" 
-        data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-    </div>
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+        </div>
     <script>
-        // data-bs-toggle 속성의 value 가 popover 인 모든 요소의 참조값을 배열에 담아오기
+        //data-bs-toggle 속성의 value 가 popover 인 모든 요소의 참조값을 배열에 담아오기 
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-        // popover 가 동작하기 위한 초기화 작업하기
+        //popover 가 동작하기 위한 초기화 작업 하기 
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
     </script>
 </body>

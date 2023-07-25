@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_example.html</title>
+    <style>
+        /* 
+            자식 선택자 .class name > 하위속성 {}
+            후손 선택자 .class name 하위속성 {}
+            자식 선택자와 하위 선택자의 차이 : 하위(후손) 선택자는 자식 선택자에 비해 더 넓은 범위를 포함한다.
+
+        */
+        .main-nav{
+            background: orangered;
+            color: white;
+            /* 
+                root 요소(html) 의 글자크기를 1rem 이라고 한다. 
+                글자크기를 지정하지 않으면 글자 크기는 기본 16px 로 설정되기 때문에 1rem은 16px이 된다.
+            */
+            padding: 1rem;
+            border-radius: 5px;
+            /* ul 요소와 form 요소를 가로로 배치하기 위해 */
+            display: flex;
+        }
+        /* main 요소중에서 자식요소 선택 >  */
+        .main-nav > ul{
+            /* ul 의 기본 스타일 제거 */
+            list-style-type: none;
+            /* padding, margin 없애기 */
+            padding: 0%;
+            margin: 0%;
+            /* ul 의 자식요소를 가로로 배치하기 위해 */
+            display: flex;
+            column-gap: 1rem;
+            flex: 1; /* ul 이 폭을 다 가진다는 의미 (왼쪽 꽉참) */
+        }
+        
+        /* .main-nav li{
+            margin-right: 1rem;
+        } */
+
+        .main-nav li a {
+            /*  a 요소의 언더라인(링크 밑줄) 제거 */
+            text-decoration: none;
+            color: white;
+        }
+        /* 커서를 올렸을때 밑줄 생기게 */
+        .main-nav li a:hover {
+            text-decoration: underline;
+        }
+        .main-nav > form {
+            flex: 1;
+            display: flex;
+            justify-items: flex-end;
+        }
+        .main-nav input{
+            flex: 1; /* 인풋요소가 폭을 다 가져간다는 의미 */
+        }
+        .main-nav button{
+            background-color: white;
+            color: orangered;
+            border: 0;
+            border-radius: 5px;
+            margin-left: 1rem;
+        }
+        /* 
+            반응형 레이아웃
+            divice 의 폭이 최대 575px 일때 까지 적용하는 css
+        */
+        @media(max-width:575px){
+            .main-nav{
+                flex-direction: column;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Logo</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Study</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        <form action="">
+            <input type="text" placeholder="검색어 입력">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+</body>
+</html>

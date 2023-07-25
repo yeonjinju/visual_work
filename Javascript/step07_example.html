@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>step07_example.html</title>
+    <title>Step07_example.html</title>
     <style>
         .container{
             width: 768px;
@@ -14,28 +14,33 @@
 </head>
 <body>
     <div class="container">
-        <h1>친구목록 입니다.</h1>
+        <h1>친구 목록 입니다.</h1>
         <button id="printBtn">출력하기</button>
         <ul id="friendList">
             
         </ul>
     </div>
     <script>
-        let names=["김구라", "해골", "원숭이", "주뎅이", "덩어리"]
-        // 위의 배열에 저장된 이름을 친구목록에 출력해보세요.
-        document.querySelector("#printBtn").addEventListener("click",()=> {
-            for(let i=0; i<5; i++){ // i<5자리에 i<name.length 가능
-                let li=document.createElement("li");
-                li.innerText=names[i] //배열의 0번방에 있는걸 참조
-                document.querySelector("#friendList").append(li);
-        }
+        let names=["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+        //버튼을 눌렀을때 위의 배열에 저장된 이름을 친구 목록에 출력해 보세요.
+
+        document.querySelector("#printBtn").addEventListener("click", ()=>{
+            for(let i=0; i<names.length; i++){
+             let a=document.createElement("a");
+             a.innerText=names[i];
+             document.querySelector("#friendList").append(a);   
+            }
         });
 
-    //     let container = () => {
-    //     for (let i=0 i<names; i){
-    //         document.querySelectorAll(names)[i].innerText=names[i]
-    //     } 
-    // }
+
+        // document.querySelector("#printBtn").addEventListener("click", ()=>{
+        //     for(let i=0;i<names.length ;i++){
+        //         let li=document.createElement("li");
+        //         li.innerText=names[i];
+        //         document.querySelector("#friendList").append(li);
+        //     }
+        // });
+
     </script>
 </body>
 </html>

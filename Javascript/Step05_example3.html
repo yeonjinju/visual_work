@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step05_example3.html</title>
-  </head>
-  <body>
-    <h1>다중 if문 테스트</h1>
-    <input type="text" id="jumsu" placeholder="점수입력..." />
+</head>
+<body>
+    <h1>다중 if 문 테스트</h1>
+    <input type="text" id="jumsu" placeholder="점수 입력...(0~100)">
     <button onclick="check()">확인하기</button>
-    <p><strong id="result"></strong>학점입니다.</p>
+    <p>
+        <strong id="result"></strong> 학점 입니다.
+    </p>
     <script>
-      /* input요소에 점수를 입력하고 확인하기 버튼을 눌렀을때, 점수가 90점 이상이면 "A", 80이상이면 "B", 70이상이면 "C", 60이상이면 "D", 그 이외는 F입력 *hint-> result, innertext */
-      let check = () => {
-        let j = document.querySelector("#jumsu").value;
-
-        // a = require("fs").readFileSync("dev/stdin");
-        // console.log(a > 89 ? "A" : a > 79 ? "B" : a > 69 ? "C" : a > 59 ? "D" : "F");
-
-        if (j >= 90) {
-          document.querySelector("#result").innerText = "A";
-        }
-        else if (j >=80) {
-            document.querySelector("#result").innerText = "B";
-        }
-        else if (j >=70) {
-            document.querySelector("#result").innerText = "C";
-        }
-        else if (j >=60) {
-            document.querySelector("#result").innerText = "D";
-        }
-        else{
-            document.querySelector("#result").innerText = "F";
-        }
-      };
-
-      //        let grade = document.querySelector("#result").innettext;
-      //         if (j >= 90) {grade="A";} -> X
-      //        let strong = document.querySelector("#result");
-      //         if (j >= 90) {strong.innertext="B";} -> O
-
+        /*
+            input 요소에 점수를 입력하고 확인하기 버튼을 눌렀을때 점수가
+            90 점 이상이면 "A"
+            80 점 이상이면 "B"
+            70 점 이상이면 "C"
+            60 점 이상이면 "D"
+            그 이외의 경우에는 "F" 라는 문자열을
+            id 가 result 인 곳의 innerText 로 출력해 보세요.
+        */
+       
+        let check=()=>{
+            //입력한 점수 읽어오기
+            let jumsu=document.querySelector("#jumsu").value;
+            if(jumsu >= 90){
+                document.querySelector("#result").innerText="A";
+            }else if(jumsu >= 80){
+                document.querySelector("#result").innerText="B";
+            }else if(jumsu >= 70){
+                document.querySelector("#result").innerText="C";
+            }else if(jumsu >= 60){
+                document.querySelector("#result").innerText="D";
+            }else{
+                document.querySelector("#result").innerText="F";
+            }
+        };
     </script>
-  </body>
+</body>
 </html>

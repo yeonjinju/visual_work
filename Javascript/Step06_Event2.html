@@ -16,22 +16,18 @@
     </style>
 </head>
 <body>
-    <h1>마우스 이벤트 처리하기</h1>
+    <h1>마우스 이벤트 처리 하기</h1>
     <div class="box"></div>
     <script>
-
-        
-        // 발생한 이벤트에 대한 정보 가 여기에 담기고->{} object안에 담겨서 callback함수의 매개변수로 전달이 된다.
-        document.querySelector(".box").addEventListener("mousemove", ()=>{
+        document.querySelector(".box").addEventListener("mousemove", (event)=>{
             //console.log("mousemove!");
-            console.log("event")
-            //이벤트가 일어난곳의 상대좌표 얻어내기
+            console.log(event);
+            //이벤트가 일어난 곳의 상대 좌표 얻어내기
             let x=event.offsetX;
             let y=event.offsetY;
-            //이벤트가 일어난 요소(div)의 innertext로 출력해보기
-            event.target.innerText="x:"+x+"y:"+y;
+            //이벤트가 일어난 요소(div) 의 innerText 로 출력해 보기
+            event.target.innerText="x:"+x+" y:"+y;
         });
-
     </script>
 </body>
 </html>

@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>step08_table2.html</title>
+    <title>Step08_table2.html</title>
     <style>
         .my-table{
-            /* table 경계선 사이의 공간을 없애기 */
             border-collapse: collapse;
         }
     </style>
@@ -15,10 +14,12 @@
 <body>
     <h1>table 요소 사용하기</h1>
     <table border="1" class="my-table">
-        <!-- 표의 제목은 caption에 표기한다. -->
+        <!-- 표의 제목은 caption 에 표기 한다 -->
         <caption>회원 목록</caption>
-        <!-- 칼럼의 폭을 조절하고 싶으면 colgroup 요소를 활용한다
-            colgroup의 자식요소인 col의 width가 칼럼의 폭이 된다. -->
+        <!-- 
+            칼럼의 폭을 조절하고 싶으면 colgroup 요소를 활용한다
+            colgroup 의 자식 요소인 col 의 width 가 칼럼의 폭이 된다. 
+        -->
         <colgroup>
             <col width="100">
             <col width="200">
@@ -41,9 +42,10 @@
                 <td>2</td>
                 <td>해골</td>
                 <td>행신동</td>
-            </tr>
+            </tr>                   
         </tbody>
     </table>
+    
     <h1>tfoot 이 있는 table</h1>
     <table border="1" class="my-table">
         <caption>GS25 현금, 카드 매출 내역</caption>
@@ -83,7 +85,6 @@
                 <td>800</td>
             </tr>
         </tbody>
-    </table>   
-
+    </table>       
 </body>
 </html>
