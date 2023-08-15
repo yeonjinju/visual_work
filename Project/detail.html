@@ -13,6 +13,9 @@
         border: 2px solid gray;
         border-radius:10px;
         text-align: center;
+        display: none; /* 숨김 처리 */
+        position: absolute; /* 위치 설정 */
+        
     }
     p {
         /* 수평 중앙 정렬하기 */
@@ -23,46 +26,78 @@
         margin: 30px auto;
         width: 300px;        
     }
+    .img-container {
+        position: relative; /* 상대 위치 설정 */
+        float: right;
+    }
+    .img-container:hover .recall {
+        display: block; /* 부모에 hover하면 자식을 보이게 함 */
+    }
+
+    .main-nav{
+        display: flex;
+        /*  종모양 위아래 가운데정렬 하기 */
+    }
+    .img{
+                    border: 0;
+            border-radius: 5px;
+            margin-left: 1rem;
+    }
+
 </style>
 </head>
 
 <body>
     <h1>고객 주문현황</h1>
+    <div class="container">
     <div id="map" style="width:800px;height:500px;"></div>
     <p id="result"></p>
-    <br>
-    <div class="recall">
-        <p>신선도 알림</p>
-        <div class="line"></div>
-        <div class="img"><img src="/Project/images/bell_icon.png" alt="bell_icon"></div>
-        <div id="buttons">
-            <!-- JSP 서버 사이드 코드로 JSON 데이터 생성 -->
-            <c:set var="jsonData">
-                [
-                    <c:forEach var="item" items="${data}" varStatus="status">
-                        {
-                            "customerName": "${item.customer_name}",
-                            "freshnessLevel": ${item.freshness_level},
-                            "index": ${status.index}
-                        }<c:if test="${not status.last}">,</c:if>
-                    </c:forEach>
-                ]
-            </c:set>
 
-            <!-- JSON 데이터를 JavaScript 변수에 할당 -->
-            <script>
-                // var buttonData = ${jsonData};
-            </script>
+    <nav class="main-nav">
+        <h1>고객 주문현황 </h1>
+        <img class="img" src="images/bell_icon.png" alt="bell_icon" width="30" height="30">
 
-            <!-- JSON 데이터를 기반으로 버튼 생성 -->
-            <c:forEach var="item" items="${jsonData}" varStatus="status">
-                <!-- <button onclick="handleButtonClicked(${status.index})"> -->
+    </nav>
+
+
+
+    <div class="img-container">
+//        <img src="images/bell_icon.png" alt="bell_icon" width="30" height="30">
+        <div class="recall">
+            <p>신선도 알림</p>
+            <div class="line"></div>
+            <div id="buttons">
+                <!-- JSP 서버 사이드 코드로 JSON 데이터 생성 -->
+                <c:set var="jsonData">
+                    [
+                        <c:forEach var="item" items="${data}" varStatus="status">{
+                                "customerName": "${item.customer_name}",
+                                "freshnessLevel": ${item.freshness_level},
+                                "index": ${status.index}
+                        }
+                        <c:if test="${not status.last}">,</c:if>
+                        </c:forEach>
+                    ]
+                </c:set>
+    
+                <!-- JSON 데이터를 JavaScript 변수에 할당 -->
+                <script>
+                    // var buttonData = ${jsonData};
+                </script>
+    
+                <!-- JSON 데이터를 기반으로 버튼 생성 -->
+                <c:forEach var="item" items="${jsonData}" varStatus="status">
+                    <!-- <button onclick="handleButtonClicked(${status.index})"> -->
                     ${item.customer_name}님의 신선도가 70% 이하로 떨어졌습니다.<br>
                     현재 신선도는 ${item.freshness_level}% 입니다.
-                </button>
-                <br><br>
-            </c:forEach>
+            </button>
+                    <br><br>
+                </c:forEach>
+            </div>
         </div>
+    </div>
+    </div>
+
 
     <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=d865c67a15044f7517639c54d9a0f65c"></script>
     <script> // 지도 기본값 
@@ -254,8 +289,10 @@
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = message;
 
-        });
+    });
 
+    
+    
     </script>
 </body>
 </html>
